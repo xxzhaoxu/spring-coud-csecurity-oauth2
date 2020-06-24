@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: user-client
+  datasource:
+    url: jdbc:mysql://192.168.0.6:3306/tm_animal?characterEncoding=utf-8&amp&serverTimezone=UTC&amp&useSSL=false
+    username: root
+    password: zhaoxuniubi
+    driver-class-name: com.mysql.jdbc.Driver
+    tomcat:
+      max-active: 4
+      min-idle: 2
+      initial-size: 2
+server:
+  port: 8016
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
