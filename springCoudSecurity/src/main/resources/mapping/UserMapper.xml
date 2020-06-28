@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.demo.entity.User">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="fullname" jdbcType="VARCHAR" property="fullname" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="enabled" jdbcType="BIT" property="enabled" />
+    <result column="account_non_locked" jdbcType="BIT" property="accountNonLocked" />
+    <result column="account_non_expired" jdbcType="BIT" property="accountNonExpired" />
+    <result column="credentials_non_expired" jdbcType="BIT" property="credentialsNonExpired" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, username, password, fullname, mobile, enabled, account_non_locked, account_non_expired, 
+    credentials_non_expired
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_user
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+    <select id="selectByUserName" resultMap="BaseResultMap">
+        select
+        a.id,
+        a.username,
+        a.password,
+        c.id as "roleId",
+        c.role
+        from t_user a
+        LEFT OUTER JOIN t_user_role b on b.user_id = a.id
+        LEFT OUTER JOIN t_role c on c.id = b.role_id
+        where a.username = #{username}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_user
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.demo.entity.User">
+    insert into t_user (id, username, password, 
+      fullname, mobile, enabled, 
+      account_non_locked, account_non_expired, credentials_non_expired
+      )
+    values (#{id,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{fullname,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, #{enabled,jdbcType=BIT}, 
+      #{accountNonLocked,jdbcType=BIT}, #{accountNonExpired,jdbcType=BIT}, #{credentialsNonExpired,jdbcType=BIT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.demo.entity.User">
+    insert into t_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="username != null">
+        username,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="fullname != null">
+        fullname,
+      </if>
+      <if test="mobile != null">
+        mobile,
+      </if>
+      <if test="enabled != null">
+        enabled,
+      </if>
+      <if test="accountNonLocked != null">
+        account_non_locked,
+      </if>
+      <if test="accountNonExpired != null">
+        account_non_expired,
+      </if>
+      <if test="credentialsNonExpired != null">
+        credentials_non_expired,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="fullname != null">
+        #{fullname,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="enabled != null">
+        #{enabled,jdbcType=BIT},
+      </if>
+      <if test="accountNonLocked != null">
+        #{accountNonLocked,jdbcType=BIT},
+      </if>
+      <if test="accountNonExpired != null">
+        #{accountNonExpired,jdbcType=BIT},
+      </if>
+      <if test="credentialsNonExpired != null">
+        #{credentialsNonExpired,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.demo.entity.User">
+    update t_user
+    <set>
+      <if test="username != null">
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="fullname != null">
+        fullname = #{fullname,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="enabled != null">
+        enabled = #{enabled,jdbcType=BIT},
+      </if>
+      <if test="accountNonLocked != null">
+        account_non_locked = #{accountNonLocked,jdbcType=BIT},
+      </if>
+      <if test="accountNonExpired != null">
+        account_non_expired = #{accountNonExpired,jdbcType=BIT},
+      </if>
+      <if test="credentialsNonExpired != null">
+        credentials_non_expired = #{credentialsNonExpired,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.demo.entity.User">
+    update t_user
+    set username = #{username,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      fullname = #{fullname,jdbcType=VARCHAR},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      enabled = #{enabled,jdbcType=BIT},
+      account_non_locked = #{accountNonLocked,jdbcType=BIT},
+      account_non_expired = #{accountNonExpired,jdbcType=BIT},
+      credentials_non_expired = #{credentialsNonExpired,jdbcType=BIT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

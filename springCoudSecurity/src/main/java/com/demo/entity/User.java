@@ -11,37 +11,33 @@ import java.util.List;
  * @author 35086
  */
 public class User implements UserDetails {
-    /** 用户id */
     private Long id;
 
-    /**  用户名 */
     private String username;
 
-    /**  用户密码 */
     private String password;
 
-    /**  角色列表 */
+    private String fullname;
+
+    private String mobile;
+
+    private Boolean enabled;
+
+    private Boolean accountNonLocked = true;
+
+    private Boolean accountNonExpired = true;
+
+    private Boolean credentialsNonExpired = true;
+
+    /** 角色列表 */
     private List<Role> authorities = new ArrayList<>();
 
-    /**  指示是否未过期的用户的凭据(密码),过期的凭据防止认证 默认true 默认表示未过期 */
-    private boolean credentialsNonExpired = true;
-
-    /**账户是否未过期,过期无法验证 默认true表示未过期*/
-    private boolean accountNonExpired = true;
-
-    /**用户是未被锁定,锁定的用户无法进行身份验证 默认true表示未锁定*/
-    private boolean accountNonLocked = true;
-
-    /**是否可用 ,禁用的用户不能身份验证 默认true表示可用*/
-    private boolean enabled = true;
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+    public Long getId() {
+        return id;
     }
 
-    @Override
-    public String getPassword() {
-        return password;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     @Override
@@ -69,40 +65,69 @@ public class User implements UserDetails {
         return enabled;
     }
 
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public void setUsername(String username) {
-        this.username = username;
+        this.username = username == null ? null : username.trim();
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return authorities;
+    }
+
+    @Override
+    public String getPassword() {
+        return password;
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password = password == null ? null : password.trim();
     }
 
-    public void setAuthorities(List<Role> authorities) {
-        this.authorities = authorities;
+    public String getFullname() {
+        return fullname;
     }
 
-    public void setCredentialsNonExpired(boolean credentialsNonExpired) {
-        this.credentialsNonExpired = credentialsNonExpired;
+    public void setFullname(String fullname) {
+        this.fullname = fullname == null ? null : fullname.trim();
     }
 
-    public void setAccountNonExpired(boolean accountNonExpired) {
-        this.accountNonExpired = accountNonExpired;
+    public String getMobile() {
+        return mobile;
     }
 
-    public void setAccountNonLocked(boolean accountNonLocked) {
+    public void setMobile(String mobile) {
+        this.mobile = mobile == null ? null : mobile.trim();
+    }
+
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public Boolean getAccountNonLocked() {
+        return accountNonLocked;
+    }
+
+    public void setAccountNonLocked(Boolean accountNonLocked) {
         this.accountNonLocked = accountNonLocked;
     }
 
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
+    public Boolean getAccountNonExpired() {
+        return accountNonExpired;
+    }
+
+    public void setAccountNonExpired(Boolean accountNonExpired) {
+        this.accountNonExpired = accountNonExpired;
+    }
+
+    public Boolean getCredentialsNonExpired() {
+        return credentialsNonExpired;
+    }
+
+    public void setCredentialsNonExpired(Boolean credentialsNonExpired) {
+        this.credentialsNonExpired = credentialsNonExpired;
     }
 }
