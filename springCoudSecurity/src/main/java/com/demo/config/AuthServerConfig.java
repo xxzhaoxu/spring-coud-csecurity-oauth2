@@ -3,6 +3,8 @@ package com.demo.config;
 import com.demo.service.MyClientDetailsService;
 import com.demo.service.UserLoginService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
@@ -14,11 +16,15 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.A
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
+import org.springframework.security.oauth2.provider.token.TokenEnhancer;
+import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
 import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.redis.RedisTokenStore;
 
 import javax.sql.DataSource;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author 35086
@@ -34,12 +40,14 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
 
     @Autowired
     private UserLoginService userLoginService;
+    @Qualifier("redisConnectionFactory")
     @Autowired
     private RedisConnectionFactory redisConnectionFactory;
 
     @Autowired
     private MyClientDetailsService myClientDetailsService;
 
+    @Qualifier("dataSource")
     @Autowired
     private DataSource dataSource;
 
@@ -77,27 +85,42 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
      * */
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) {
-        endpoints
+
+            endpoints
 //                .tokenStore(new InMemoryTokenStore())
 //                .tokenStore(redisTokenStore())
-                .tokenStore(jdbcTokenStore())
-                /**
-                 * 配置令牌生成
-                 */
-                .accessTokenConverter(accessTokenConverter())
-                /**
-                 * 通过注入密码授权被打开AuthenticationManager
-                 */
-                .authenticationManager(authenticationManager)
-                /**
-                 * 该字段设置设置refresh token是否重复使用,true:reuse;false:no reuse.
-                 */
-                .reuseRefreshTokens(false)
-                /**
-                 * 刷新令牌授权将包含对用户详细信息的检查，以确保该帐户仍然活动,因此需要配置userDetailsService
-                 */
-                .userDetailsService(userLoginService)
-        ;
+                    .tokenStore(jdbcTokenStore())
+                    /**
+                     * 配置令牌生成
+                     */
+                    .accessTokenConverter(accessTokenConverter())
+                    /**
+                     * 通过注入密码授权被打开AuthenticationManager
+                     */
+                    .authenticationManager(authenticationManager)
+                    /**
+                     * 该字段设置设置refresh token是否重复使用,true:reuse;false:no reuse.
+                     */
+                    .reuseRefreshTokens(false)
+                    /**
+                     * 刷新令牌授权将包含对用户详细信息的检查，以确保该帐户仍然活动,因此需要配置userDetailsService
+                     */
+                    .userDetailsService(userLoginService)
+            ;
+        /**
+         * 扩展token返回结果
+         */
+        if (accessTokenConverter() != null && jwtTokenEnhancer() != null) {
+            TokenEnhancerChain tokenEnhancerChain = new TokenEnhancerChain();
+            List<TokenEnhancer> enhancerList = new ArrayList();
+            enhancerList.add(jwtTokenEnhancer());
+            enhancerList.add(accessTokenConverter());
+            tokenEnhancerChain.setTokenEnhancers(enhancerList);
+            //jwt
+            endpoints.tokenEnhancer(tokenEnhancerChain)
+                    .accessTokenConverter(accessTokenConverter());
+        }
+
     }
 
     /** 配置jwt转换器 */
@@ -108,6 +131,11 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
         return converter;
     }
 
+    @Bean
+    @ConditionalOnMissingBean(name = "jwtTokenEnhancer")
+    public TokenEnhancer jwtTokenEnhancer(){
+        return new JwtTokenEnhancer();
+    }
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security){
         /**

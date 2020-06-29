@@ -37,10 +37,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        auth.inMemoryAuthentication()
-//                .withUser("admin")
-//                .password(passwordEncoder().encode("111")).roles("USER");
+//        auth.inMemoryAuthentication().withUser("admin").password(passwordEncoder().encode("111")).roles("USER");
         auth.userDetailsService(userLoginService).passwordEncoder(passwordEncoder());
+
     }
 
     /** 授权服务配置需要用到这个 bean  */
@@ -54,4 +53,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
+
 }

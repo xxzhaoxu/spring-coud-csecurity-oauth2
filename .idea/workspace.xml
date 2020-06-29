@@ -2,35 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a942fbc3-9f6e-4784-846f-0d0c9ef88708" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/entity/Clients.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/mapper/ClientsMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/mapper/RoleMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/service/MyClientDetailsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/resources/mapping/ClientsMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/resources/mapping/RoleMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/resources/mapping/UserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/resources/mybatis-generator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/common/ResultUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/config/AuthExceptionEntryPoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/config/JwtTokenEnhancer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/config/ResourceServerConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/entity/Result.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/handler/AppLoginFailureHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/handler/AppLoginInSuccessHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/handler/CustomAccessDeniedHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/handler/CustomOauthException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/handler/CustomOauthExceptionSerializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/handler/CustomWebResponseExceptionTranslator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/permit/PermitAllSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/permit/PermitAuthenticationFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-user/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-user/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springCoudSecurity/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/SecurityApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/SecurityApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/config/AuthServerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/config/AuthServerConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/dao/UserDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/entity/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/entity/Clients.java" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/entity/Clients.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/service/UserLoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/service/UserLoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/mapper/ClientsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/mapper/ClientsMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/service/MyClientDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/service/MyClientDetailsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/springCoudSecurity/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springCoudSecurity/src/main/resources/mapping/ClientsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/resources/mapping/ClientsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springCoudSecurity/src/main/resources/mapping/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/resources/mapping/UserMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/springCoudSecurity/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springCoudSecurity/target/classes/com/demo/SecurityApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/target/classes/com/demo/SecurityApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/springCoudSecurity/target/classes/com/demo/config/AuthServerConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/target/classes/com/demo/config/AuthServerConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/springCoudSecurity/target/classes/com/demo/config/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/target/classes/com/demo/config/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springCoudSecurity/target/classes/com/demo/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/target/classes/com/demo/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springCoudSecurity/target/classes/com/demo/entity/Clients.class" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/target/classes/com/demo/entity/Clients.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springCoudSecurity/target/classes/com/demo/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/target/classes/com/demo/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springCoudSecurity/target/classes/com/demo/mapper/ClientsMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/target/classes/com/demo/mapper/ClientsMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springCoudSecurity/target/classes/com/demo/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/target/classes/com/demo/mapper/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springCoudSecurity/target/classes/com/demo/service/MyClientDetailsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/target/classes/com/demo/service/MyClientDetailsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springCoudSecurity/target/classes/mapping/ClientsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/target/classes/mapping/ClientsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springCoudSecurity/target/classes/mapping/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/target/classes/mapping/UserMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,8 +142,16 @@
       <option name="presentableId" value="Default" />
       <updated>1592876708312</updated>
       <workItem from="1592876711562" duration="32198000" />
-      <workItem from="1593316047076" duration="11032000" />
+      <workItem from="1593316047076" duration="33074000" />
     </task>
+    <task id="LOCAL-00001" summary="动态刷新token">
+      <created>1593336723156</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1593336723156</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,76 +159,82 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="动态刷新token" />
+    <option name="LAST_COMMIT_MESSAGE" value="动态刷新token" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#Project_Structure" timestamp="1592894944309">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1592894944309" />
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1593328523240">
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1593421694144">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1593328523240" />
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1593421694144" />
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1593327062997">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593327062997" />
-    <state x="462" y="114" key="CommitChangelistDialog2" timestamp="1593336665954">
+    <state x="462" y="114" key="CommitChangelistDialog2" timestamp="1593336719562">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="462" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1593336665954" />
+    <state x="462" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1593336719562" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1593325741661">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1593325741661" />
-    <state width="1877" height="469" key="GridCell.Tab.0.bottom" timestamp="1593335169725">
+    <state width="1877" height="485" key="GridCell.Tab.0.bottom" timestamp="1593422880146">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="469" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593335169725" />
-    <state width="1877" height="469" key="GridCell.Tab.0.center" timestamp="1593335169725">
+    <state width="1877" height="485" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593422880146" />
+    <state width="1877" height="485" key="GridCell.Tab.0.center" timestamp="1593422880146">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="469" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593335169725" />
-    <state width="1877" height="469" key="GridCell.Tab.0.left" timestamp="1593335169725">
+    <state width="1877" height="485" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593422880146" />
+    <state width="1877" height="485" key="GridCell.Tab.0.left" timestamp="1593422880146">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="469" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593335169725" />
-    <state width="1877" height="469" key="GridCell.Tab.0.right" timestamp="1593335169725">
+    <state width="1877" height="485" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593422880146" />
+    <state width="1877" height="485" key="GridCell.Tab.0.right" timestamp="1593422880146">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="469" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593335169725" />
-    <state width="1877" height="469" key="GridCell.Tab.1.bottom" timestamp="1593335169725">
+    <state width="1877" height="485" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593422880146" />
+    <state width="1877" height="485" key="GridCell.Tab.1.bottom" timestamp="1593422880146">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="469" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593335169725" />
-    <state width="1877" height="469" key="GridCell.Tab.1.center" timestamp="1593335169725">
+    <state width="1877" height="485" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593422880146" />
+    <state width="1877" height="485" key="GridCell.Tab.1.center" timestamp="1593422880146">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="469" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593335169725" />
-    <state width="1877" height="469" key="GridCell.Tab.1.left" timestamp="1593335169725">
+    <state width="1877" height="485" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593422880146" />
+    <state width="1877" height="485" key="GridCell.Tab.1.left" timestamp="1593422880146">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="469" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593335169725" />
-    <state width="1877" height="469" key="GridCell.Tab.1.right" timestamp="1593335169725">
+    <state width="1877" height="485" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593422880146" />
+    <state width="1877" height="485" key="GridCell.Tab.1.right" timestamp="1593422880146">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="469" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593335169725" />
-    <state width="1877" height="261" key="GridCell.Tab.2.bottom" timestamp="1593329057333">
+    <state width="1877" height="485" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593422880146" />
+    <state width="1877" height="389" key="GridCell.Tab.2.bottom" timestamp="1593419355027">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="261" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593329057333" />
-    <state width="1877" height="261" key="GridCell.Tab.2.center" timestamp="1593329057333">
+    <state width="1877" height="389" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593419355027" />
+    <state width="1877" height="389" key="GridCell.Tab.2.center" timestamp="1593419355027">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="261" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593329057333" />
-    <state width="1877" height="261" key="GridCell.Tab.2.left" timestamp="1593329057333">
+    <state width="1877" height="389" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593419355027" />
+    <state width="1877" height="389" key="GridCell.Tab.2.left" timestamp="1593419355027">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="261" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593329057333" />
-    <state width="1877" height="261" key="GridCell.Tab.2.right" timestamp="1593329057333">
+    <state width="1877" height="389" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593419355027" />
+    <state width="1877" height="389" key="GridCell.Tab.2.right" timestamp="1593419355027">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="261" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593329057333" />
+    <state width="1877" height="389" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593419355027" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1593336725396">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1593336725396" />
     <state x="731" y="222" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1592885126487">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -222,10 +243,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="284" key="extract.method.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593335874401" />
-    <state x="636" y="253" width="647" height="534" key="find.popup" timestamp="1592897574765">
+    <state x="636" y="253" width="647" height="534" key="find.popup" timestamp="1593402084429">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="636" y="253" width="647" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1592897574765" />
+    <state x="636" y="253" width="647" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1593402084429" />
     <state x="334" y="214" key="new project wizard" timestamp="1592972930373">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

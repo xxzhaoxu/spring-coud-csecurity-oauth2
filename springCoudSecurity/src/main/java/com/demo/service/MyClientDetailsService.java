@@ -2,7 +2,6 @@ package com.demo.service;
 
 import com.demo.entity.Clients;
 import com.demo.mapper.ClientsMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.provider.ClientDetails;
 import org.springframework.security.oauth2.provider.ClientDetailsService;
 import org.springframework.security.oauth2.provider.ClientRegistrationException;

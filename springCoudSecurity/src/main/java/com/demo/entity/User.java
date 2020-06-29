@@ -1,36 +1,43 @@
 package com.demo.entity;
 
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 /**
  * @author 35086
  */
 public class User implements UserDetails {
+    /** 用户id */
     private Long id;
 
+    /** 用户名 */
     private String username;
 
+    /** 用户密码 */
     private String password;
-
-    private String fullname;
-
-    private String mobile;
-
-    private Boolean enabled;
-
-    private Boolean accountNonLocked = true;
-
-    private Boolean accountNonExpired = true;
-
-    private Boolean credentialsNonExpired = true;
 
     /** 角色列表 */
     private List<Role> authorities = new ArrayList<>();
+
+    /** 指示是否未过期的用户的凭据(密码),过期的凭据防止认证 默认true 默认表示未过期 */
+    private boolean credentialsNonExpired = true;
+
+    /**
+     * 账户是否未过期,过期无法验证 默认true表示未过期
+     */
+    private boolean accountNonExpired = true;
+
+    /**
+     * 用户是未被锁定,锁定的用户无法进行身份验证 默认true表示未锁定
+     */
+    private boolean accountNonLocked = true;
+
+    /**
+     * 是否可用 ,禁用的用户不能身份验证 默认true表示可用
+     */
+    private boolean enabled = true;
 
     public Long getId() {
         return id;
@@ -45,33 +52,8 @@ public class User implements UserDetails {
         return username;
     }
 
-    @Override
-    public boolean isAccountNonExpired() {
-        return accountNonExpired;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return accountNonLocked;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return credentialsNonExpired;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return enabled;
-    }
-
     public void setUsername(String username) {
-        this.username = username == null ? null : username.trim();
-    }
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return authorities;
+        this.username = username;
     }
 
     @Override
@@ -80,54 +62,52 @@ public class User implements UserDetails {
     }
 
     public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
+        this.password = password;
     }
 
-    public String getFullname() {
-        return fullname;
+    public void setAuthorities(List<Role> authorities) {
+        this.authorities = authorities;
     }
 
-    public void setFullname(String fullname) {
-        this.fullname = fullname == null ? null : fullname.trim();
+    @Override
+    public List<Role> getAuthorities() {
+        return authorities;
     }
 
-    public String getMobile() {
-        return mobile;
+    public void setCredentialsNonExpired(boolean credentialsNonExpired) {
+        this.credentialsNonExpired = credentialsNonExpired;
     }
 
-    public void setMobile(String mobile) {
-        this.mobile = mobile == null ? null : mobile.trim();
-    }
-
-    public Boolean getEnabled() {
-        return enabled;
-    }
-
-    public void setEnabled(Boolean enabled) {
-        this.enabled = enabled;
-    }
-
-    public Boolean getAccountNonLocked() {
-        return accountNonLocked;
-    }
-
-    public void setAccountNonLocked(Boolean accountNonLocked) {
-        this.accountNonLocked = accountNonLocked;
-    }
-
-    public Boolean getAccountNonExpired() {
-        return accountNonExpired;
-    }
-
-    public void setAccountNonExpired(Boolean accountNonExpired) {
-        this.accountNonExpired = accountNonExpired;
-    }
-
-    public Boolean getCredentialsNonExpired() {
+    @Override
+    public boolean isCredentialsNonExpired() {
         return credentialsNonExpired;
     }
 
-    public void setCredentialsNonExpired(Boolean credentialsNonExpired) {
-        this.credentialsNonExpired = credentialsNonExpired;
+    public void setAccountNonExpired(boolean accountNonExpired) {
+        this.accountNonExpired = accountNonExpired;
     }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return accountNonExpired;
+    }
+
+    public void setAccountNonLocked(boolean accountNonLocked) {
+        this.accountNonLocked = accountNonLocked;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return enabled;
+    }
+
 }

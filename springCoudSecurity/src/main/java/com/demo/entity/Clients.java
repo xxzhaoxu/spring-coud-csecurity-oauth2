@@ -1,10 +1,8 @@
 package com.demo.entity;
 
-import com.alibaba.fastjson.JSON;
-import io.netty.util.internal.StringUtil;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.oauth2.provider.ClientDetails;
-
+import com.alibaba.fastjson.JSON;
 import java.util.*;
 
 /**
@@ -12,43 +10,32 @@ import java.util.*;
  */
 public class Clients implements ClientDetails {
     private String clientId;
-
-    private String resourceIds;
-
-    private String clientSecret;
-
-    private String scope;
-
-    private String authorizedGrantTypes;
-
-    private String webServerRedirectUri;
-
-    private String authorities;
-
-    private Integer accessTokenValidity;
-
-    private Integer refreshTokenValidity;
-
-    private Date createTime;
-
-    private Byte archived;
-
-    private Byte trusted;
-
-    private String autoapprove;
-
-    private String additionalInformation;
-
     @Override
     public String getClientId() {
         return clientId;
     }
-
     public void setClientId(String clientId) {
-        this.clientId = clientId == null ? null : clientId.trim();
+        this.clientId = clientId;
     }
 
 
+
+    private String clientSecret;
+    @Override
+    public String getClientSecret() {
+        return clientSecret;
+    }
+    public void setClientSecret(String clientSecret) {
+        this.clientSecret = clientSecret;
+    }
+    @Override
+    public boolean isSecretRequired() {
+        return clientSecret != null;
+    }
+
+
+
+    private String resourceIds;
     @Override
     public Set<String> getResourceIds() {
         if (resourceIds==null||resourceIds.trim().length()<=0){
@@ -61,33 +48,19 @@ public class Clients implements ClientDetails {
         }
         return resourceSet;
     }
-
-    @Override
-    public boolean isSecretRequired() {
-        return false;
-    }
-
     public void setResourceIds(String resourceIds) {
-        this.resourceIds = resourceIds == null ? null : resourceIds.trim();
+        this.resourceIds = resourceIds;
     }
 
-    @Override
-    public String getClientSecret() {
-        return clientSecret;
-    }
 
-    @Override
-    public boolean isScoped() {
-        return false;
-    }
 
-    public void setClientSecret(String clientSecret) {
-        this.clientSecret = clientSecret == null ? null : clientSecret.trim();
-    }
 
+
+
+    private String scope;
     @Override
     public Set<String> getScope() {
-        if (StringUtil.isNullOrEmpty(scope)){
+        if (scope==null||scope.trim().length()<=0){
             return Collections.emptySet();
         }
         Set<String> scopeSet = new LinkedHashSet<>();
@@ -97,14 +70,20 @@ public class Clients implements ClientDetails {
         }
         return scopeSet;
     }
-
     public void setScope(String scope) {
-        this.scope = scope == null ? null : scope.trim();
+        this.scope = scope;
+    }
+    @Override
+    public boolean isScoped() {
+        return scope!=null&&scope.trim().length()>0;
     }
 
+
+
+    private String authorizedGrantTypes;
     @Override
     public Set<String> getAuthorizedGrantTypes() {
-        if (StringUtil.isNullOrEmpty(authorizedGrantTypes)){
+        if (authorizedGrantTypes==null||authorizedGrantTypes.trim().length()<=0){
             return Collections.emptySet();
         }
         Set<String> authorizedGrantTypeSet = new LinkedHashSet<>();
@@ -114,27 +93,36 @@ public class Clients implements ClientDetails {
         }
         return authorizedGrantTypeSet;
     }
+    public void setAuthorizedGrantTypes(String authorizedGrantTypes) {
+        this.authorizedGrantTypes = authorizedGrantTypes;
+    }
 
+
+
+    private String registeredRedirectUris;
     @Override
     public Set<String> getRegisteredRedirectUri() {
-        return null;
+        if (registeredRedirectUris==null||registeredRedirectUris.trim().length()<=0){
+            return Collections.emptySet();
+        }
+        Set<String> redirectUriSet = new LinkedHashSet<>();
+        String[] uris = registeredRedirectUris.split(",");
+        for (String uri : uris) {
+            redirectUriSet.add(uri);
+        }
+        return redirectUriSet;
+    }
+    public void setRegisteredRedirectUri(String registeredRedirectUri) {
+        this.registeredRedirectUris = registeredRedirectUris;
     }
 
-    public void setAuthorizedGrantTypes(String authorizedGrantTypes) {
-        this.authorizedGrantTypes = authorizedGrantTypes == null ? null : authorizedGrantTypes.trim();
-    }
 
-    public String getWebServerRedirectUri() {
-        return webServerRedirectUri;
-    }
 
-    public void setWebServerRedirectUri(String webServerRedirectUri) {
-        this.webServerRedirectUri = webServerRedirectUri == null ? null : webServerRedirectUri.trim();
-    }
 
+    private String authorities;
     @Override
     public Collection<GrantedAuthority> getAuthorities() {
-        if (StringUtil.isNullOrEmpty(authorities)){
+        if (authorities==null||authorities.trim().length()<=0){
             return Collections.emptyList();
         }
         List<GrantedAuthority> authorityList = new ArrayList<>();
@@ -144,83 +132,79 @@ public class Clients implements ClientDetails {
         }
         return authorityList;
     }
+    public void setAuthorities(String authorities) {
+        this.authorities = authorities;
+    }
 
+
+
+
+    private Integer accessTokenValiditySeconds;
     @Override
     public Integer getAccessTokenValiditySeconds() {
-        return null;
+        return accessTokenValiditySeconds;
+    }
+    public void setAccessTokenValiditySeconds(Integer accessTokenValiditySeconds) {
+        this.accessTokenValiditySeconds = accessTokenValiditySeconds;
     }
 
+
+
+    private Integer refreshTokenValiditySeconds;
     @Override
     public Integer getRefreshTokenValiditySeconds() {
-        return null;
+        return refreshTokenValiditySeconds;
+    }
+    public void setRefreshTokenValiditySeconds(Integer refreshTokenValiditySeconds) {
+        this.refreshTokenValiditySeconds = refreshTokenValiditySeconds;
     }
 
-    @Override
-    public boolean isAutoApprove(String s) {
-        return false;
-    }
 
-    public void setAuthorities(String authorities) {
-        this.authorities = authorities == null ? null : authorities.trim();
-    }
 
-    public Integer getAccessTokenValidity() {
-        return accessTokenValidity;
-    }
-
-    public void setAccessTokenValidity(Integer accessTokenValidity) {
-        this.accessTokenValidity = accessTokenValidity;
-    }
-
-    public Integer getRefreshTokenValidity() {
-        return refreshTokenValidity;
-    }
-
-    public void setRefreshTokenValidity(Integer refreshTokenValidity) {
-        this.refreshTokenValidity = refreshTokenValidity;
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Byte getArchived() {
-        return archived;
-    }
-
-    public void setArchived(Byte archived) {
-        this.archived = archived;
-    }
-
-    public Byte getTrusted() {
-        return trusted;
-    }
-
-    public void setTrusted(Byte trusted) {
-        this.trusted = trusted;
-    }
-
-    public String getAutoapprove() {
-        return autoapprove;
-    }
-
-    public void setAutoapprove(String autoapprove) {
-        this.autoapprove = autoapprove == null ? null : autoapprove.trim();
-    }
-
+    private String additionalInformation;
     @Override
     public Map<String, Object> getAdditionalInformation() {
-        if (StringUtil.isNullOrEmpty(additionalInformation)){
+        if (additionalInformation==null||additionalInformation.trim().length()<=0){
             return Collections.emptyMap();
         }
         return JSON.parseObject(additionalInformation);
     }
-
     public void setAdditionalInformation(String additionalInformation) {
-        this.additionalInformation = additionalInformation == null ? null : additionalInformation.trim();
+        this.additionalInformation = additionalInformation;
     }
+
+    private String autoApproveScopes;
+    public Set<String> getAutoApproveScopes() {
+        if (autoApproveScopes==null||autoApproveScopes.trim().length()<=0){
+            return Collections.emptySet();
+        }
+        Set<String> approveSet = new HashSet<>();
+        String[] approves = autoApproveScopes.split(",");
+        for (String approve : approves) {
+            approveSet.add(approve);
+        }
+        return approveSet;
+    }
+    public void setAutoApproveScopes(String autoApproveScopes) {
+        this.autoApproveScopes = autoApproveScopes;
+    }
+
+
+    @Override
+    public boolean isAutoApprove(String scope) {
+        if(getAutoApproveScopes() == null||getAutoApproveScopes().isEmpty()) {
+            return false;
+        } else {
+            Iterator var2 = getAutoApproveScopes().iterator();
+            String auto;
+            do {
+                if(!var2.hasNext()) {
+                    return false;
+                }
+                auto = (String)var2.next();
+            } while(!auto.equals("true") && !scope.matches(auto));
+            return true;
+        }
+    }
+
 }
