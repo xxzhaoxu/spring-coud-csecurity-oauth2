@@ -2,47 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a942fbc3-9f6e-4784-846f-0d0c9ef88708" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/common/ResultUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/config/AuthExceptionEntryPoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/config/JwtTokenEnhancer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/config/ResourceServerConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/entity/Result.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/handler/AppLoginFailureHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/handler/AppLoginInSuccessHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/handler/CustomAccessDeniedHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/handler/CustomOauthException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/handler/CustomOauthExceptionSerializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/handler/CustomWebResponseExceptionTranslator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/permit/PermitAllSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/permit/PermitAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-user/src/main/java/com/demo/entity/Result.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/handler/MyOauthException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/handler/MyOauthExceptionSerializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/handler/MyOauthWebResponseExceptionTranslator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/service/AuthenticationProviderImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-user/src/main/java/com/demo/config/ResourceServerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/src/main/java/com/demo/config/ResourceServerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-user/src/main/java/com/demo/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/src/main/java/com/demo/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-user/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-user/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-user/target/classes/com/demo/config/ResourceServerConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/target/classes/com/demo/config/ResourceServerConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-user/target/classes/com/demo/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/target/classes/com/demo/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/common/ResultUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/config/AuthExceptionEntryPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/src/main/java/com/demo/config/AuthExceptionEntryPoint.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/config/AuthServerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/config/AuthServerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/config/JwtTokenEnhancer.java" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/config/JwtTokenEnhancer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/config/ResourceServerConfiguration.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/entity/Clients.java" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/entity/Clients.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/mapper/ClientsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/mapper/ClientsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/service/MyClientDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/service/MyClientDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/handler/AppLoginFailureHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/handler/AppLoginInSuccessHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/handler/CustomAccessDeniedHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/handler/CustomOauthException.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/src/main/java/com/demo/handler/CustomOauthException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/handler/CustomOauthExceptionSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/src/main/java/com/demo/handler/CustomOauthExceptionSerializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/handler/CustomWebResponseExceptionTranslator.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-user/src/main/java/com/demo/handler/Auth2ResponseExceptionTranslator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/permit/PermitAllSecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/springCoudSecurity/src/main/java/com/demo/permit/PermitAuthenticationFilter.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/springCoudSecurity/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springCoudSecurity/src/main/resources/mapping/ClientsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/resources/mapping/ClientsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springCoudSecurity/src/main/resources/mapping/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/src/main/resources/mapping/UserMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/springCoudSecurity/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/target/classes/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/springCoudSecurity/target/classes/com/demo/config/AuthServerConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/target/classes/com/demo/config/AuthServerConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/springCoudSecurity/target/classes/com/demo/config/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/target/classes/com/demo/config/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springCoudSecurity/target/classes/com/demo/entity/Clients.class" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/target/classes/com/demo/entity/Clients.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springCoudSecurity/target/classes/com/demo/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/target/classes/com/demo/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springCoudSecurity/target/classes/com/demo/mapper/ClientsMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/target/classes/com/demo/mapper/ClientsMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springCoudSecurity/target/classes/com/demo/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/target/classes/com/demo/mapper/UserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springCoudSecurity/target/classes/com/demo/service/MyClientDetailsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/target/classes/com/demo/service/MyClientDetailsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springCoudSecurity/target/classes/mapping/ClientsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/target/classes/mapping/ClientsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springCoudSecurity/target/classes/mapping/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/springCoudSecurity/target/classes/mapping/UserMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="SpringCloudLoginDemo" />
@@ -76,7 +73,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/springCoudSecurity/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -85,6 +82,9 @@
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.demo.entity" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\IntelliJIDEAProjects\SpringCloudLoginDemo\springCoudSecurity\src\main\resources" />
       <recent name="E:\IntelliJIDEAProjects\SpringCloudLoginDemo\service-user\src\main\resources" />
@@ -142,7 +142,8 @@
       <option name="presentableId" value="Default" />
       <updated>1592876708312</updated>
       <workItem from="1592876711562" duration="32198000" />
-      <workItem from="1593316047076" duration="33074000" />
+      <workItem from="1593316047076" duration="38593000" />
+      <workItem from="1593490091353" duration="11482000" />
     </task>
     <task id="LOCAL-00001" summary="动态刷新token">
       <created>1593336723156</created>
@@ -151,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593336723156</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="token认证失败 同意处理">
+      <created>1593422971819</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1593422971819</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,81 +168,86 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="动态刷新token" />
-    <option name="LAST_COMMIT_MESSAGE" value="动态刷新token" />
+    <MESSAGE value="token认证失败 同意处理" />
+    <option name="LAST_COMMIT_MESSAGE" value="token认证失败 同意处理" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#Project_Structure" timestamp="1592894944309">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1592894944309" />
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1593421694144">
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1593499424831">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1593421694144" />
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1593499424831" />
+    <state x="510" y="445" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1593489659296">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="510" y="445" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593489659296" />
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1593327062997">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593327062997" />
-    <state x="462" y="114" key="CommitChangelistDialog2" timestamp="1593336719562">
+    <state x="458" y="114" width="1000" height="812" key="CommitChangelistDialog2" timestamp="1593422967825">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="462" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1593336719562" />
+    <state x="458" y="114" width="1000" height="812" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1593422967825" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1593325741661">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1593325741661" />
-    <state width="1877" height="485" key="GridCell.Tab.0.bottom" timestamp="1593422880146">
+    <state width="1877" height="306" key="GridCell.Tab.0.bottom" timestamp="1593507353436">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="485" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593422880146" />
-    <state width="1877" height="485" key="GridCell.Tab.0.center" timestamp="1593422880146">
+    <state width="1877" height="306" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593507353436" />
+    <state width="1877" height="306" key="GridCell.Tab.0.center" timestamp="1593507353436">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="485" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593422880146" />
-    <state width="1877" height="485" key="GridCell.Tab.0.left" timestamp="1593422880146">
+    <state width="1877" height="306" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593507353436" />
+    <state width="1877" height="306" key="GridCell.Tab.0.left" timestamp="1593507353435">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="485" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593422880146" />
-    <state width="1877" height="485" key="GridCell.Tab.0.right" timestamp="1593422880146">
+    <state width="1877" height="306" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593507353435" />
+    <state width="1877" height="306" key="GridCell.Tab.0.right" timestamp="1593507353436">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="485" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593422880146" />
-    <state width="1877" height="485" key="GridCell.Tab.1.bottom" timestamp="1593422880146">
+    <state width="1877" height="306" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593507353436" />
+    <state width="1877" height="182" key="GridCell.Tab.1.bottom" timestamp="1593507353316">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="485" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593422880146" />
-    <state width="1877" height="485" key="GridCell.Tab.1.center" timestamp="1593422880146">
+    <state width="1877" height="182" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593507353316" />
+    <state width="1877" height="182" key="GridCell.Tab.1.center" timestamp="1593507353316">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="485" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593422880146" />
-    <state width="1877" height="485" key="GridCell.Tab.1.left" timestamp="1593422880146">
+    <state width="1877" height="182" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593507353316" />
+    <state width="1877" height="182" key="GridCell.Tab.1.left" timestamp="1593507353316">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="485" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593422880146" />
-    <state width="1877" height="485" key="GridCell.Tab.1.right" timestamp="1593422880146">
+    <state width="1877" height="182" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593507353316" />
+    <state width="1877" height="182" key="GridCell.Tab.1.right" timestamp="1593507353316">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="485" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593422880146" />
-    <state width="1877" height="389" key="GridCell.Tab.2.bottom" timestamp="1593419355027">
+    <state width="1877" height="182" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593507353316" />
+    <state width="1877" height="306" key="GridCell.Tab.2.bottom" timestamp="1593507353300">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="389" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593419355027" />
-    <state width="1877" height="389" key="GridCell.Tab.2.center" timestamp="1593419355027">
+    <state width="1877" height="306" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593507353300" />
+    <state width="1877" height="306" key="GridCell.Tab.2.center" timestamp="1593507353300">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="389" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593419355027" />
-    <state width="1877" height="389" key="GridCell.Tab.2.left" timestamp="1593419355027">
+    <state width="1877" height="306" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593507353300" />
+    <state width="1877" height="306" key="GridCell.Tab.2.left" timestamp="1593507353300">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="389" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593419355027" />
-    <state width="1877" height="389" key="GridCell.Tab.2.right" timestamp="1593419355027">
+    <state width="1877" height="306" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593507353300" />
+    <state width="1877" height="306" key="GridCell.Tab.2.right" timestamp="1593507353300">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="389" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593419355027" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1593336725396">
+    <state width="1877" height="306" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593507353300" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1593422973927">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1593336725396" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1593422973927" />
     <state x="731" y="222" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1592885126487">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -243,10 +256,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="284" key="extract.method.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593335874401" />
-    <state x="636" y="253" width="647" height="534" key="find.popup" timestamp="1593402084429">
+    <state x="636" y="253" width="647" height="534" key="find.popup" timestamp="1593506487818">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="636" y="253" width="647" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1593402084429" />
+    <state x="636" y="253" width="647" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1593506487818" />
     <state x="334" y="214" key="new project wizard" timestamp="1592972930373">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -255,5 +268,21 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1592876817807" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/service-user/src/main/java/com/demo/handler/CustomWebResponseExceptionTranslator.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/service-user/src/main/java/com/demo/config/AuthExceptionEntryPoint.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

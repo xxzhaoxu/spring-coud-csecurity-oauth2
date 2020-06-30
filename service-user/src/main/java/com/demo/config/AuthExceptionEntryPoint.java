@@ -3,6 +3,7 @@ package com.demo.config;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
+import org.springframework.stereotype.Component;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -14,6 +15,7 @@ import java.util.Map;
  * @author 35086
  * 自定义AuthExceptionEntryPoint用于tokan校验失败返回信息
  */
+@Component
 public class AuthExceptionEntryPoint implements AuthenticationEntryPoint {
 
 

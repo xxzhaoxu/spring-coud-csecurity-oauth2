@@ -5,6 +5,7 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
@@ -12,6 +13,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.R
 import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.error.OAuth2AccessDeniedHandler;
 import org.springframework.security.oauth2.provider.token.RemoteTokenServices;
+import org.springframework.security.oauth2.provider.token.ResourceServerTokenServices;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 import org.springframework.web.client.DefaultResponseErrorHandler;
@@ -23,8 +25,10 @@ import org.springframework.web.client.RestTemplate;
 @Configuration
 @EnableResourceServer
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter{
+    @Autowired
+    private AuthExceptionEntryPoint authExceptionEntryPoint;
     /**
-     * http://localhost:8015/oauth/authorize?client_id=clientId&response_type=code&redirect_uri=http://localhost:8015/
+     * http://localhost:8015/oauth/authorize?client_id=c1&response_type=code&redirect_uri=http://localhost:8015/
      * @param builder
      * @return
      */
@@ -41,21 +45,32 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter{
     private RestTemplate restTemplate;
 
 
+
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
         resources.tokenStore(new JwtTokenStore(accessTokenConverter())).stateless(true);
-
+        resources.authenticationEntryPoint(new AuthExceptionEntryPoint());
         /* 配置令牌验证 */
+
+        resources.authenticationEntryPoint(authExceptionEntryPoint);
+        resources.tokenServices(tokenServices()).stateless(true);
+
+    }
+
+    /**
+     * 远程验证token
+     * @return
+     */
+    @Bean
+    public ResourceServerTokenServices tokenServices(){
         RemoteTokenServices remoteTokenServices = new RemoteTokenServices();
         remoteTokenServices.setAccessTokenConverter(accessTokenConverter());
         remoteTokenServices.setRestTemplate(restTemplate);
         remoteTokenServices.setCheckTokenEndpointUrl("http://security-demo:8015/oauth/check_token");
         remoteTokenServices.setClientId("c1");
         remoteTokenServices.setClientSecret("secret");
-
-        resources.tokenServices(remoteTokenServices).stateless(true);
+        return remoteTokenServices;
     }
-
     @Bean
     public JwtAccessTokenConverter accessTokenConverter() {
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
@@ -71,8 +86,11 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter{
         // /save/no不受保护
         // /user/save 受保护
         http.authorizeRequests()
-                .antMatchers("/save/**").permitAll()
-                .anyRequest().authenticated();
+                .antMatchers(HttpMethod.OPTIONS).permitAll()
+                .antMatchers("/save/**").authenticated()
+                .and().httpBasic()
+                .and().csrf().disable();
+
 
         http.exceptionHandling().accessDeniedHandler(new OAuth2AccessDeniedHandler());
     }

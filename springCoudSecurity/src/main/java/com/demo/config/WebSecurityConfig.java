@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -20,6 +21,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserLoginService userLoginService;
+    @Autowired
+    private AuthenticationProvider authenticationProvider;
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         /** 跨域伪造请求限制=无效 */
@@ -27,7 +30,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         /** 开启授权认证 */
         http.authorizeRequests()
                 /** 允许访问授权接口*/
-                .antMatchers("/oauth/**").permitAll()
+                .antMatchers("/oauth/**")
+                .permitAll()
                 .anyRequest().authenticated();
         /** 登录配置 */
         http.formLogin().permitAll();
@@ -37,8 +41,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        auth.inMemoryAuthentication().withUser("admin").password(passwordEncoder().encode("111")).roles("USER");
         auth.userDetailsService(userLoginService).passwordEncoder(passwordEncoder());
+        auth.authenticationProvider(authenticationProvider);
 
     }
 

@@ -1,15 +1,13 @@
 package com.demo.handler;
 
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.oauth2.common.exceptions.OAuth2Exception;
 import org.springframework.security.oauth2.provider.error.WebResponseExceptionTranslator;
 import org.springframework.stereotype.Component;
 
-/**
- * @author 35086
- */
 @Component("customWebResponseExceptionTranslator")
-public class CustomWebResponseExceptionTranslator implements WebResponseExceptionTranslator {
+public class Auth2ResponseExceptionTranslator implements WebResponseExceptionTranslator {
     @Override
     public ResponseEntity<OAuth2Exception> translate(Exception e) throws Exception {
 

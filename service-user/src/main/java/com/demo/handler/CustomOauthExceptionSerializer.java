@@ -1,5 +1,4 @@
 package com.demo.handler;
-
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
@@ -8,11 +7,8 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.util.Date;
 import java.util.Map;
-
-/**
- * @author 35086
- */
 public class CustomOauthExceptionSerializer extends StdSerializer<CustomOauthException> {
     public CustomOauthExceptionSerializer() {
         super(CustomOauthException.class);
@@ -27,8 +23,8 @@ public class CustomOauthExceptionSerializer extends StdSerializer<CustomOauthExc
         gen.writeStringField("message", value.getMessage());
 //        gen.writeStringField("message", "用户名或密码错误");
         gen.writeStringField("path", request.getServletPath());
-        gen.writeStringField("timestamp", String.valueOf(System.currentTimeMillis()/1000));
-        if (value.getAdditionalInformation()!=null) {
+        gen.writeStringField("timestamp", String.valueOf(new Date().getTime()));
+        if (value.getAdditionalInformation() != null) {
             for (Map.Entry<String, String> entry : value.getAdditionalInformation().entrySet()) {
                 String key = entry.getKey();
                 String add = entry.getValue();
@@ -37,6 +33,4 @@ public class CustomOauthExceptionSerializer extends StdSerializer<CustomOauthExc
         }
         gen.writeEndObject();
     }
-
-
 }

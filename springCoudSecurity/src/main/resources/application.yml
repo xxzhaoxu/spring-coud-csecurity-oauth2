@@ -2,7 +2,7 @@ spring:
   application:
     name: security-demo
   datasource:
-    url: jdbc:mysql://192.168.0.4:3306/tm_animal?characterEncoding=utf-8&amp&serverTimezone=UTC&amp&useSSL=false
+    url: jdbc:mysql://192.168.0.7:3306/tm_animal?characterEncoding=utf-8&amp&serverTimezone=UTC&amp&useSSL=false
     username: root
     password: zhaoxuniubi
     driver-class-name: com.mysql.jdbc.Driver
